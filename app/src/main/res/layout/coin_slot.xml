@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="slot"
+            type="hey.there.pennydrop.types.Slots" />
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+
+    android:id="@+id/cl_coinSlot"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/iv_coinImageCoinSlot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/coin_icon"
+        android:minWidth="36dp"
+        android:minHeight="36dp"
+        android:src="@drawable/currency_usd"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:isHidden="@{!slot.canBeFilled || !slot.isFilled}"
+        android:tint="@{slot.lastRolled? @color/purple_500: @android:color/black}"
+        tools:ignore="UseAppTint" />
+
+    <View
+        android:id="@+id/bottomViewCoinSlot"
+        android:layout_width="0dp"
+        android:layout_height="5dp"
+        android:background="@{slot.lastRolled? @color/purple_200:@android:color/black}"
+        app:layout_constraintStart_toStartOf="@id/iv_coinImageCoinSlot"
+        app:layout_constraintEnd_toEndOf="@id/iv_coinImageCoinSlot"
+        app:layout_constraintTop_toBottomOf="@id/iv_coinImageCoinSlot"/>
+    
+    <TextView
+        android:id="@+id/tv_slotNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text='@{slot.number+ ""}'
+        android:textColor="@{slot.lastRolled? @color/purple_200:@android:color/black}"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@id/iv_coinImageCoinSlot"
+        app:layout_constraintEnd_toEndOf="@id/iv_coinImageCoinSlot"
+        app:layout_constraintTop_toBottomOf="@id/bottomViewCoinSlot"
+        tools:text="3"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

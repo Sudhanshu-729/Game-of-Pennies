@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/pickPlayersFragments"
+        android:title="@string/players1"
+        android:icon="@drawable/ic_baseline_tag_faces_24"/>
+
+    <item android:id="@+id/gameFragments"
+        android:title="@string/game1"
+        android:icon="@drawable/dice_6"/>
+</menu>

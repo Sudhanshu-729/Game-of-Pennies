@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+        <import type="hey.there.pennydrop.Game.AI"/>
+        <variable
+            name="player"
+            type="hey.there.pennydrop.types.NewPlayer" />
+
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+
+
+    <CheckBox
+        android:id="@+id/checkbox_player_active"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:checked="@={player.isIncluded()}"
+        android:visibility="@{player.canBeRemoved? View.VISIBLE:View.INVISIBLE}"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/player_name"
+        app:layout_constraintTop_toTopOf="@id/player_name"
+
+        />
+
+    <EditText
+
+        android:id="@+id/player_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="@={player.playerName}"
+        android:visibility="@{player.isHuman? View.VISIBLE:View.INVISIBLE}"
+        android:hint="@string/player_name"
+        android:inputType="textPersonName"
+        android:enabled="@{player.isIncluded}"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/switch_player_name"
+        app:layout_constraintStart_toEndOf="@id/checkbox_player_active"
+        />
+
+    <androidx.appcompat.widget.SwitchCompat
+
+        android:id="@+id/switch_player_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/player_name"
+        app:layout_constraintBottom_toBottomOf="@id/player_name"
+        android:thumb="@drawable/ai_toggle_bg"
+        app:thumbTint="@color/ai_toggle_color"
+
+        android:checked="@={player.isHuman()}"
+        android:enabled="@{player.isIncluded}"
+        android:visibility="@{player.canBeToggled? View.VISIBLE : View.INVISIBLE}"
+
+        />
+
+    <Spinner
+        android:id="@+id/sp_aiName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:entries="@{AI.getBasicAI()}"
+        android:enabled="@{player.isIncluded}"
+        android:selectedItemPosition="@={player.selectedAIPosition}"
+        android:visibility="@{player.isHuman? View.INVISIBLE:View.VISIBLE}"
+        app:layout_constraintTop_toTopOf="@id/player_name"
+        app:layout_constraintBottom_toBottomOf="@id/player_name"
+        app:layout_constraintStart_toEndOf="@id/checkbox_player_active"
+        app:layout_constraintEnd_toStartOf="@id/switch_player_name"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

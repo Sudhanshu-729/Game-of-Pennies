@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">PennyDrop</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="Pick_Players_Fragments">Pick Players Fragments</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="game_fragment">Game Fragment</string>
+    <string name="players1">Players</string>
+    <string name="game1">Game</string>
+    <string name="play_button">play_button</string>
+    <string name="player_name">player_name</string>
+    <string name="sudhanshu">Sudhanshu</string>
+    <string name="_7">7</string>
+    <string name="coin_s_left">Coins left</string>
+
+    <string name="roll">Roll</string>
+    <string name="or">Or</string>
+    <string name="pass">Pass</string>
+    <string name="this_will_contain_info_about_the_game">This will contain info about the game</string>
+    <string name="this_will_contain_current_standing_of_the_game">This will contain current standing of the game</string>
+    <string name="coin_icon">coin_icon</string>
+    <string name="None">Guest</string>
+
+
+</resources>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/pickPlayersFragments">
+
+    <fragment
+        android:name="hey.there.pennydrop.fragments.PickPlayersFragment"
+        android:id="@+id/pickPlayersFragments"
+        android:label="fragment_pick_players"/>
+    <fragment
+        android:name="hey.there.pennydrop.fragments.GameFragment"
+        android:id="@+id/gameFragments"
+        android:label="fragment_game"/>
+
+</navigation>
